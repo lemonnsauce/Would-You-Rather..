@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Would You Rather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="session-counter" id="session-counter">0 answered</div>
+  <div class="title-overlay">Would You Rather</div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀ Light</button>
+
+  <main id="main">
+    <section class="half" id="half-left" role="button" tabindex="0" aria-label="Option 1">
+      <div class="loading-spinner" id="spinner-left"></div>
+      <p class="option-text" id="opt1"></p>
+      <span class="key-hint">← A</span>
+    </section>
+
+    <div class="divider">
+      <div class="or-badge">OR</div>
+      <svg class="progress-ring" viewBox="0 0 128 128" aria-hidden="true">
+        <defs>
+          <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#ff6b6b" />
+            <stop offset="100%" stop-color="#667eea" />
+          </linearGradient>
+        </defs>
+        <circle class="progress-ring-track" cx="64" cy="64" r="60" />
+        <circle class="progress-ring-fill"  cx="64" cy="64" r="60" id="progress-ring-fill" />
+      </svg>
+      <div class="streak-label" id="streak-label"></div>
+    </div>
+
+    <section class="half" id="half-right" role="button" tabindex="0" aria-label="Option 2">
+      <div class="loading-spinner" id="spinner-right"></div>
+      <p class="option-text" id="opt2"></p>
+      <span class="key-hint">D →</span>
+    </section>
+  </main>
+
+  <button id="next-btn" title="Skip  (Space / N)">Next Question →</button>
+
+  <!-- Results popup -->
+  <div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Vote results">
+    <div class="popup" id="popup">
+      <p class="popup-heading">What People Said</p>
+      <div class="popup-results" id="popup-results"></div>
+      <button class="popup-next-btn" id="popup-next-btn" title="Next (Enter)">Next Question →</button>
+      <p class="popup-esc-hint">Esc or click outside to skip</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
